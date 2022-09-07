@@ -12,5 +12,5 @@ rules:
   # but that's pretty standard in Ansible.
   truthy: disable
 
-  # disable line lengths because @felddy has had enough of this.
+  # disable line lengths because @felddy has had enough of this!
   line-length: disable
