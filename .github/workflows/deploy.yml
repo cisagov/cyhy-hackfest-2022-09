@@ -29,7 +29,10 @@ name: Deploy to Amazon ECS
 
 on:
   push:
-    branches: [$default-branch]
+    branches:
+      - develop
+      - production
+      - staging
 
 env:
   AWS_REGION: MY_AWS_REGION                   # set this to your preferred AWS region, e.g. us-west-1
@@ -48,9 +51,18 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: production
+    environment: ${{ github.ref_name }}
 
     steps:
+      - name: Check GitHub Status
+        uses: crazy-max/ghaction-github-status@11800cf081427ec689e7f34f287f9e0c85ae6826
+        with:
+          overall_threshold: major
+          packages_threshold: major_outage
+
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@516dbb0c760f39b4cdd750ae095f1688780f68f4
+
       - name: Checkout
         uses: actions/checkout@v3
 
