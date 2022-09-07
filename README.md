@@ -1,5 +1,9 @@
 # cyhy-hackfest-2022-09 #
 
+<div align="center">
+<img width="460" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Nábrók_Necropants_stencil_by_Ræveðs.svg">
+</div>
+
 [![GitHub Build Status](https://github.com/cisagov/cyhy-hackfest-2022-09/workflows/build/badge.svg)](https://github.com/cisagov/cyhy-hackfest-2022-09/actions)
 
 ## Purpose ##
