@@ -6,6 +6,26 @@
 
 CyHy Hackfest 2022-09 to test CI/CD deployment of GraphQL APIs to AWS AppSync.
 
+## Spiffy Diagram ##
+
+The following diagram shows how this repository interacts with a development,
+staging, and production environments.
+
+```mermaid
+graph LR
+    subgraph GitHub
+        repo[Repository]
+        repo -->|push| build[Build]
+        build -->|push| test[Test]
+        test -->|push| deploy[Deploy]
+    end
+    subgraph AWS
+        deploy -->|terraform| dev[Development]
+        deploy -->|terraform| stage[Staging]
+        deploy -->|terraform| prod[Production]
+    end
+```
+
 ## Contributing ##
 
 ~~We welcome contributions!~~
