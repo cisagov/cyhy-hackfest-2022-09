@@ -13,6 +13,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
+<<<<<<< HEAD
       interval: "daily"
     labels:
       - "bot :robot:"
@@ -27,6 +28,17 @@ updates:
       - "bot :robot:"
       - "dependencies :game_die:"
       - "javascript :coffee:"
+=======
+      interval: "weekly"
+    # ignore:
+    #   # Managed by cisagov/skeleton-generic
+    #   - dependency-name: actions/cache
+    #   - dependency-name: actions/checkout
+    #   - dependency-name: actions/setup-go
+    #   - dependency-name: actions/setup-python
+    #   - dependency-name: hashicorp/setup-terraform
+    #   - dependency-name: mxschmitt/action-tmate
+>>>>>>> e803e1ac48ea53dc766d05935fbc38d2f4ad385e
 
   - package-ecosystem: "pip"
     directory: "/"
