@@ -47,5 +47,5 @@ jobs:
 
       - name: Print some things
         run: |
-            echo "This is what is in the environment:"
+            echo "This is what is in the environment variables:"
             env | sort
