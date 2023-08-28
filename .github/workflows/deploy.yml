@@ -45,7 +45,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Print some things
+      - name: Dump vars context
+        env:
+          VARS_JSON: ${{ toJSON(vars) }}
+        run: echo "${VARS_JSON}"
+
+      - name: Print secrets and their hashes
         run: |
-            echo "This is what is in the environment variables:"
-            env | sort
+          echo "The secret is ${{ secrets.TF_BACKEND_BUCKET }}"
+          sha256sum <<< "${{ secrets.TF_BACKEND_BUCKET }}"
+          echo "The secret is ${{ secrets.TF_BACKEND_ROLE_ARN }}"
+          sha256sum <<< "${{ secrets.TF_BACKEND_ROLE_ARN }}"
