@@ -9,7 +9,12 @@ on:
       - staging
 
 env:
+  ALL_ENVS_CAN_SEE: ${{ vars.ALL_ENVS_CAN_SEE }}
   AWS_REGION: us-east-1  # TODO: Make this a variable
+  DEPLOY_TF_BACKEND_ROLE_ARN: ${{ vars.TF_BACKEND_ROLE_ARN }}
+  DEPLOY_TF_BUCKET: ${{ vars.TF_BACKEND_BUCKET }}
+  DEPLOY_TF_DYNAMODB: ${{ vars.TF_BACKEND_DYNAMODB }}
+  DEPLOY_TF_VARS_URL: ${{ vars.TF_VARS_URL }}
 
 permissions:
   contents: read
@@ -39,3 +44,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
+
+      - name: Print some things
+        run: |
+            echo "This is what is in the environment:"
+            env | sort
