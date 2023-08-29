@@ -13,3 +13,7 @@ __pycache__
 terraform.tfstate
 terraform.tfstate.backup
 *.tfvars
+
+## Terragrunt-generated ##
+backend.tf
+provider.tf
