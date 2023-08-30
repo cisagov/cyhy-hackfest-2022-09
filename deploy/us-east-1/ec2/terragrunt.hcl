@@ -16,12 +16,15 @@ include "root" {
   path = find_in_parent_folders()
 }
 
-# # Include the envcommon configuration for the component. The envcommon
-# # configuration contains settings that are common for the component across
-# # all environments.
-# include "envcommon" {
-#   path = "${dirname(find_in_parent_folders())}/_envcommon/mysql.hcl"
-# }
+dependency "vpc" {
+  config_path = "../vpc"
+}
+
+# Include the common configuration for the component. The common configuration
+# contains settings that are common for the component across all environments.
+include "common" {
+  path = "${dirname(find_in_parent_folders())}/_common/ec2.hcl"
+}
 
 
 # -----------------------------------------------------------------------------
