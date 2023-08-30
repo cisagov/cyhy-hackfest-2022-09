@@ -15,5 +15,6 @@ terraform.tfstate.backup
 *.tfvars
 
 ## Terragrunt-generated ##
+.terragrunt-cache
 backend.tf
 provider.tf
