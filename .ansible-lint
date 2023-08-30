@@ -12,6 +12,8 @@ exclude_paths:
   - .cache
   # Seems wise to ignore this too
   - .github
+  # Terragrunt doesn't play by our yaml rules
+  - .terragrunt-cache
 kinds:
   # This will force our systemd specific molecule configurations to be treated
   # as plain yaml files by ansible-lint. This mirrors the default kind
