@@ -10,7 +10,7 @@
 # parameter, along with any files in the working directory, into a temporary
 # folder, and execute your Terraform commands in that folder. If any environment
 # needs to deploy a different module version, it should redefine this block with
-# a different ref to override the deployed version. 
+# a different ref to override the deployed version.
 terraform {
   # Note: //. is added after the URL to avoid the following Terragrunt warning:
   # "WARN[0000] No double-slash (//) found in source URL"

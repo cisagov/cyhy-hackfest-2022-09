@@ -34,7 +34,7 @@ provider "aws" {
     role_arn     = "${get_env("DEPLOY_ROLE_ARN")}"
     session_name = "hackfest.provisioning"
   }
-  
+
   region = "${local.aws_region}"
   secret_key = "${get_env("AWS_SECRET_ACCESS_KEY")}"
 }
