@@ -15,7 +15,7 @@ terraform {
   # Note: //. is added after the URL to avoid the following Terragrunt warning:
   # "WARN[0000] No double-slash (//) found in source URL"
   # For more info, see: https://github.com/gruntwork-io/terragrunt/issues/1675
-  source = "${local.base_source_url}//.?ref=v5.1.1"
+  source = "${local.base_source_url}//.?version=5.1.1"
 }
 
 # -----------------------------------------------------------------------------
@@ -25,7 +25,10 @@ locals {
   # Expose the base source URL so different versions of the module can be
   # deployed in different environments. This will be used to construct the
   # terraform block in the child terragrunt configurations.
-  base_source_url = "git::git@github.com:terraform-aws-modules/terraform-aws-vpc.git"
+  # The URL used below (tfr:///) is a shorthand for
+  # "tfr://registry.terraform.io/terraform-aws-modules...". For more info, see:
+  # https://terragrunt.gruntwork.io/docs/reference/config-blocks-and-attributes/
+  base_source_url = "tfr:///terraform-aws-modules/vpc/aws"
 
   # Automatically load region-level variables
   region_vars = read_terragrunt_config(find_in_parent_folders("region.hcl"))

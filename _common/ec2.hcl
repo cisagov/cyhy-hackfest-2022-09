@@ -15,7 +15,7 @@ terraform {
   # Note: //. is added after the URL to avoid the following Terragrunt warning:
   # "WARN[0000] No double-slash (//) found in source URL"
   # For more info, see: https://github.com/gruntwork-io/terragrunt/issues/1675
-  source = "${local.base_source_url}//.?ref=1.1.0"
+  source = "${local.base_source_url}//.?version=1.1.0"
 }
 
 # -----------------------------------------------------------------------------
@@ -35,7 +35,10 @@ locals {
   # Expose the base source URL so different versions of the module can be
   # deployed in different environments. This will be used to construct the
   # terraform block in the child terragrunt configurations.
-  base_source_url = "git::git@github.com:cloudposse/terraform-aws-ec2-instance.git"
+  # The URL used below (tfr:///) is a shorthand for
+  # "tfr://registry.terraform.io/cloudposse...". For more info, see:
+  # https://terragrunt.gruntwork.io/docs/reference/config-blocks-and-attributes/
+  base_source_url = "tfr:///cloudposse/ec2-instance/aws"
 }
 
 # -----------------------------------------------------------------------------
