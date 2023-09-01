@@ -9,14 +9,17 @@ on:
       - staging
 
 env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_REGION: ${{ vars.TF_BACKEND_AWS_REGION }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   DEPLOY_ENVIRONMENT: ${{ github.ref_name }}
   DEPLOY_TF_BACKEND_ROLE_ARN: ${{ secrets.TF_BACKEND_ROLE_ARN }}
   DEPLOY_TF_BUCKET: ${{ secrets.TF_BACKEND_BUCKET }}
   DEPLOY_TF_DYNAMODB: ${{ secrets.TF_BACKEND_DYNAMODB }}
+  DEPLOY_ROLE_ARN: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
   DEPLOY_TF_VARS_URL: ${{ vars.TF_VARS_URL }}
   tf_version: 'latest'
-  tf_working_dir: '.'
+  tf_working_dir: './deploy'
   tg_version: 'latest'
 
 permissions:
