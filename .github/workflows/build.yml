@@ -91,7 +91,7 @@ jobs:
           PACKAGE_VERSION: ${{ steps.setup-env.outputs.terraform-docs-version }}
         run: go install ${PACKAGE_URL}@${PACKAGE_VERSION}
       - name: Install Terragrunt
-        uses: autero1/action-terragrunt@v1
+        uses: autero1/action-terragrunt@v1.3.2
         with:
           terragrunt_version: latest
       - name: Install dependencies
