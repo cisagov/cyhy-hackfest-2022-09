@@ -92,6 +92,7 @@ jobs:
         run: go install ${PACKAGE_URL}@${PACKAGE_VERSION}
       - uses: gruntwork-io/terragrunt-action@v1
         with:
+          tf_version: ${{ steps.setup-env.outputs.terraform-version }}
           tg_version: latest
       - name: Install dependencies
         run: |
