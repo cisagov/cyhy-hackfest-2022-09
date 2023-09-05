@@ -37,8 +37,8 @@ locals {
   region_vars = read_terragrunt_config(find_in_parent_folders("region.hcl"))
 
   # Extract out common variables for reuse
-  route53_hosted_zone_id = local.environment_vars.locals.route53_hosted_zone_id
   region                 = local.region_vars.locals.aws_region
+  route53_hosted_zone_id = local.environment_vars.locals.route53_hosted_zone_id
 }
 
 # -----------------------------------------------------------------------------

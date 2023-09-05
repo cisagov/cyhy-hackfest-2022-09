@@ -1,9 +1,8 @@
 # -----------------------------------------------------------------------------
 # COMMON TERRAGRUNT CONFIGURATION
-# This is the common component configuration for an EC2 instance. The common
-# variables for each environment to deploy mysql are defined here. This
-# configuration will be merged into the environment configuration via an include
-# block.
+# This is the common component configuration for a VPC. The common variables for
+# each environment to deploy mysql are defined here. This configuration will be
+# merged into the environment configuration via an include block.
 # -----------------------------------------------------------------------------
 
 # Terragrunt will copy the Terraform configurations specified by the source
