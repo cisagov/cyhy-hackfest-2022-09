@@ -38,6 +38,16 @@ provider "aws" {
   region = "${local.aws_region}"
   secret_key = "${get_env("AWS_SECRET_ACCESS_KEY")}"
 }
+
+# Necessary workaround for terraform-aws-s3-static-website module
+provider "aws" {
+  alias = "acm_provider"
+}
+
+# Necessary workaround for terraform-aws-s3-static-website module
+provider "aws" {
+  alias = "main"
+}
 EOF
 }
 
