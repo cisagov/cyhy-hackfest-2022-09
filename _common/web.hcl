@@ -15,7 +15,8 @@ terraform {
   # Note: //. is added after the URL to avoid the following Terragrunt warning:
   # "WARN[0000] No double-slash (//) found in source URL"
   # For more info, see: https://github.com/gruntwork-io/terragrunt/issues/1675
-  source = "${local.base_source_url}//.?version=1.0.8"
+  # Temporarily use my fork until a PR can be made against the upstream repo
+  source = "github.com/dav3r/terraform-aws-s3-static-website//."
 }
 
 # -----------------------------------------------------------------------------
@@ -28,7 +29,7 @@ locals {
   # The URL used below (tfr:///) is a shorthand for
   # "tfr://registry.terraform.io/cn-terraform...". For more info, see:
   # https://terragrunt.gruntwork.io/docs/reference/config-blocks-and-attributes/
-  base_source_url = "tfr:///cn-terraform/s3-static-website/aws"
+  # base_source_url = "tfr:///cn-terraform/s3-static-website/aws"
 
   # Automatically load environment-level variables
   environment_vars = read_terragrunt_config(find_in_parent_folders("env.hcl"))
