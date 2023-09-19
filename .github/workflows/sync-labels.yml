@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Sync repository labels
         if: success()
-        uses: crazy-max/ghaction-github-labeler@v4
+        uses: crazy-max/ghaction-github-labeler@de749cf181958193cb7debf1a9c5bb28922f3e1b
         with:
           # This is a hideous ternary equivalent so we only do a dry run unless
           # this workflow is triggered by the develop branch.
