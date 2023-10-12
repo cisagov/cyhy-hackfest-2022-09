@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 version: 2
 updates:
   - package-ecosystem: "docker"
@@ -36,12 +37,47 @@ updates:
       - "bot :robot:"
       - "dependencies :game_die:"
       - "python :snake:"
+=======
 
-  - package-ecosystem: "terraform"
-    directory: "/"
+# Any ignore directives should be uncommented in downstream projects to disable
+# Dependabot updates for the given dependency. Downstream projects will get
+# these updates when the pull request(s) in the appropriate skeleton are merged
+# and Lineage processes these changes.
+
+updates:
+  - directory: /
+    # ignore:
+    #   # Managed by cisagov/skeleton-generic
+    #   - dependency-name: actions/cache
+    #   - dependency-name: actions/checkout
+    #   - dependency-name: actions/setup-go
+    #   - dependency-name: actions/setup-python
+    #   - dependency-name: crazy-max/ghaction-dump-context
+    #   - dependency-name: crazy-max/ghaction-github-labeler
+    #   - dependency-name: crazy-max/ghaction-github-status
+    #   - dependency-name: hashicorp/setup-terraform
+    #   - dependency-name: mxschmitt/action-tmate
+    #   - dependency-name: step-security/harden-runner
+    package-ecosystem: github-actions
     schedule:
+      interval: weekly
+>>>>>>> 8432f1e2fbd3766f8ca89c1b87c8c04da86ec728
+
+  - directory: /
+    package-ecosystem: pip
+    schedule:
+<<<<<<< HEAD
       interval: "daily"
     labels:
       - "bot :robot:"
       - "dependencies :game_die:"
       - "terraform :earth_americas:"
+=======
+      interval: weekly
+
+  - directory: /
+    package-ecosystem: terraform
+    schedule:
+      interval: weekly
+version: 2
+>>>>>>> 8432f1e2fbd3766f8ca89c1b87c8c04da86ec728
