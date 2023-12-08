@@ -11,7 +11,7 @@ terraform {
     # https://www.hashicorp.com/blog/default-tags-in-the-terraform-aws-provider
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.57"
+      version = "~> 5.30"
     }
   }
 }
